@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GO Mart</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/landing.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <script type="text/javascript" src="scripts/dropdown.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900');
+    </style>
+
+</head>
+<body>
+
+<div id="dimmer"></div>
+
+    <div class="header">
+        <div class="main-header">
+            <div class="top-links">
+                <div class="page-container">
+                    <div class="links-holder left">
+                        <!--<a href="#help" class="top-link-item"><p>Help</p></a>-->
+                    </div>
+                    <div class="links-holder right">
+                        <a href="#signin" class="top-link-item"><p>Sign in</p></a>
+                        <a href="#register" class="top-link-item"><p>Register</p></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="top-nav">
+                <div class="top-nav-holder">
+                    <div class="logo">
+                        <a class="active" href="#home"><span class="logo-image"></span></a>
+                    </div>
+                    <div class="top-nav-content">
+                        <div class="input-group search-container">
+                            <input type="text" placeholder="Search...">
+                            <span class="button-group">
+                                <button class="btn button-search button-orange" type="button"><i class="fas fa-search"></i></button>
+                            </span>
+                        </div>
+                        <div class="right-nav">
+                            <a href="#basket" class="btn button-outline-dark"><i class="fas fa-shopping-basket"></i> £0.00</a>
+                            <a href="#checkout" class="btn button-disable">Checkout</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="page-container" style="position: relative">
+                <div class="bar">
+                    <div class="items">
+                        <div class="item-group items-left">
+                            <a href="#departments" class="bar-item" id="menu-department"><p>Departments <i class="fas fa-chevron-down" style="color: black; margin-left: 5px;"></i></p></a>
+                            <a href="#offers" class="bar-item bar-item-alert"><p>Offers</p></a>
+                        </div>
+                        <div class="item-group items-right">
+                            <a href="#departments" id="menu-favourites" class="bar-item"><p>Favourites  <i class="fas fa-chevron-down" style="color: black; margin-left: 5px;"></i></p></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-box" id="department-dropdown">
+                    <div class="dropdown-content">
+                        <div class="dropdown-column">
+                            <a href="#cat1" class="dropdown-item top">View All <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Fresh & Chilled <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Bakery <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Frozen <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Beer, Wine & Spirits <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Household <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Toiletries <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Health & Medicine <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Pet <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Drinks <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">New <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-box dropdown-right dropdown-small" id="favourites-dropdown">
+                    <div class="dropdown-content">
+                        <div class="dropdown-column">
+                            <a href="#cat1" class="dropdown-item top">View All <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Fresh & Chilled <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Bakery <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Frozen <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Beer, Wine & Spirits <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Household <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Toiletries <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Health & Medicine <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Pet <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Drinks <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">New <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="extra-shit">
+            <div class="page-container extra-items">
+                <a href="#20off" class="extra-shit-item">
+                    <i class="fas fa-truck"></i> <p><b>20% OFF</b> your first order</p>
+                </a>
+                <a href="#quality" class="extra-shit-item">
+                    <i class="fas fa-heart"></i> <p>Quality products picked and packed with care</p>
+                </a>
+                <a href="#orderb4" class="extra-shit-item">
+                    <i class="fas fa-box"></i> <p>Order before <b>4pm</b> for next day delivery</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="banner-rect">
+            <div class="banner-container">
+                <div class="banner-item">
+                    <h1>Low price promise</h1>
+                    <p>We pride ourselves in giving our customers the best possible value for money.</p>
+                    <div class="banner-button">
+                        <a href="#landingbutton" class="btn btn-outline-white-trans" style="width: 200px">Learn more</a>
+                    </div>
+                </div>
+
+
+                <div class="banner-box">
+                    <p class="title">Welcome to <b style="font-weight: 700">GO Mart</b> online</p>
+                    <p class="subtitle">Fresh groceries delivered to your door.</p>
+                    <div class="button-area">
+                        <a href="#register" class="btn button-orange banner-button fill-button">Register to start shopping</a>
+                        <a href="#signin" class="btn button-outline-dark banner-button">Already a customer? Sign in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box box-grey">
+            <h2 class="title">Shop by category</h2>
+            <div class="categories">
+                <div class="button-row">
+                    <a href="#freshnchilled" class="btn button-outline-grey cat-button">Fresh & Chilled</a>
+                    <a href="#bakery" class="btn button-outline-grey cat-button">Bakery</a>
+                    <a href="#frozen" class="btn button-outline-grey cat-button">Frozen</a>
+                    <a href="#beer" class="btn button-outline-grey cat-button">Beer, Wine & Spirits</a>
+                    <a href="#household" class="btn button-outline-grey cat-button">Household</a>
+                    <a href="#toilet" class="btn button-outline-grey cat-button">Toiletries</a>
+                    <a href="#health" class="btn button-outline-grey cat-button">Health & Medicine</a>
+                    <a href="#pet" class="btn button-outline-grey cat-button">Pet</a>
+                    <a href="#drinks" class="btn button-outline-grey cat-button">Drinks</a>
+                    <a href="#new" class="btn button-outline-grey cat-button">New</a>
+                </div>
+            </div>
+            <div class="button-column">
+                <a href="#viewall" class="btn button-grey content-button content-button">View all</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="page-container">
+            <div class="title">
+                <h2>Offers of the week</h2>
+            </div>
+            <div class="box box-white">
+                <div class="offer-carousel">
+                    <div class="offer-buttons">
+                        <div class="offer-button button-left"><i class="fas fa-chevron-left"></i></div>
+                        <div class="offer-button button-right"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                    <div class="offer-row">
+                        <a href="#item1" class="offer-item">
+                            <div class="offer-image">
+                                <div class="offer-tile">
+                                    <h3>£1</h3>
+                                </div>
+                                <img src="pictures/landing/image1.png" alt="Italian Trulli">
+                            </div>
+                            <h5 class="offer-text">Tropicana 100%</h5>
+                        </a>
+                        <a href="#item2" class="offer-item">
+                            <div class="offer-image">
+                                <div class="offer-tile">
+                                    <h3>£2</h3>
+                                </div>
+                                <img src="pictures/landing/image2.png" alt="Italian Trulli">
+                            </div>
+                            <h5 class="offer-text">Cravendale Semi Skimmed Milk</h5>
+                        </a>
+                        <a href="#item3" class="offer-item">
+                            <div class="offer-image">
+                                <div class="offer-tile">
+                                    <h3>£1</h3>
+                                </div>
+                                <img src="pictures/landing/image3.png" alt="Italian Trulli">
+                            </div>
+                            <h5 class="offer-text">Hovis Best of Both Medium</h5>
+                        </a>
+                        <a href="#item4" class="offer-item">
+                            <div class="offer-image">
+                                <div class="offer-tile">
+                                    <h3>£1</h3>
+                                </div>
+                                <img src="pictures/landing/image4.png" alt="Italian Trulli">
+                            </div>
+                            <h5 class="offer-text">Mission Deli Original Wraps</h5>
+                        </a>
+                        <a href="#item5" class="offer-item">
+                            <div class="offer-image">
+                                <div class="offer-tile">
+                                    <h3>£9</h3>
+                                </div>
+                                <img src="pictures/landing/image5.png" alt="Italian Trulli">
+                            </div>
+                            <h5 class="offer-text">Pedigree Vital Protection Jelly</h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="button-column">
+                    <a href="#shopoffers" class="btn button-orange content-button">Shop offers</a>
+                </div>
+            </div>
+
+            <div class="title">
+                <h2>Why our customers choose us</h2>
+            </div>
+            <div class="box box-white">
+                <div class="quotes">
+                    <div class="quote-left quote">
+                        <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p>
+                        <h4>Barry, Middlesbrough</h4>
+                    </div>
+                    <div class="quote-right quote">
+                        <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p>
+                        <h4>Steve, Gloucestershire</h4>
+                    </div>
+                </div>
+                <div class="button-column">
+                    <a href="#findoutmore" class="btn button-grey content-button">Find out more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-container page-container">
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <div class="footer-link-group">
+                        <h4>Help</h4>
+                        <ul>
+                            <li><a href="#help" class="footer-link">Help & Support</a></li>
+                            <li><a href="#delivery" class="footer-link">Delivery information</a></li>
+                            <li><a href="#returns" class="footer-link">Returns, Exchanges & Refunds</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-link-group">
+                        <h4>Follow us</h4>
+                        <ul>
+                            <li><a href="#facebook" class="footer-link link-icon"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                            <li><a href="#instagram" class="footer-link link-icon"><i class="fab fa-instagram"></i> Instagram</a></li>
+                            <li><a href="#twitter" class="footer-link link-icon"><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href="#pinterest" class="footer-link link-icon" ><i class="fab fa-pinterest"></i> Pinterest</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-link-group email-text-box">
+                        <h4>Mailing list</h4>
+                        <p>Receive the latest offers and promotions as well as <b>10% off</b> your first order.</p>
+                        <div class="input-group">
+                            <input type="text" placeholder="Enter your email address">
+                            <span class="button-group">
+                                <button class="btn button-orange" type="button">Subscribe</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-container">
+            <div class="footer-bottom-holder">
+                <div class="footer-bottom-content left">
+                    <p class="footer-text">Copyright © Go Mart 2019</p>
+                </div>
+                <div class="footer-bottom-content right">
+                    <a href="#cookies" class="footer-text">Cookies</a>
+                    <a href="#privacy" class="footer-text">Privacy</a>
+                    <a href="#terms" class="footer-text">Terms & Conditions</a>
+                    <a href="#legal" class="footer-text">Legal Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
