@@ -15,8 +15,7 @@
 </head>
 <body>
 
-<div id="dimmer"></div>
-
+<div class="dimmer" id="menu-dimmer"></div>
     <div class="header">
         <div class="main-header">
             <div class="top-links">
@@ -34,16 +33,36 @@
 
             <div class="top-nav">
                 <div class="top-nav-holder">
+
+                    <div class="dropdown-box dropdown-search" id="search-dropdown">
+                        <div class="dropdown-content">
+                            <div class="dropdown-column">
+                                <a href="#cat1" class="dropdown-item">Eggs</a>
+                                <a href="#cat2" class="dropdown-item">Free Range Eggs & Chilled</a>
+                                <a href="#cat2" class="dropdown-item">Egg Noodles</a>
+                                <a href="#cat2" class="dropdown-item">Large Free Range Eggs</a>
+                                <a href="#cat2" class="dropdown-item">Egg</a>
+                                <a href="#cat2" class="dropdown-item">Scotch Eggs</a>
+                                <a href="#cat2" class="dropdown-item">Organic Eggs</a>
+                                <a href="#cat2" class="dropdown-item">Egg Fried Rice</a>
+                                <a href="#cat2" class="dropdown-item">Large Eggs</a>
+                                <a href="#cat2" class="dropdown-item">Easter Eggs</a>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="logo">
                         <a class="active" href="#home"><span class="logo-image"></span></a>
                     </div>
                     <div class="top-nav-content">
+                        <!--<div class="dimmer" id="search-dimmer"></div>-->
                         <div class="input-group search-container">
-                            <input type="text" placeholder="Search...">
+                            <input id="search-bar" type="text" placeholder="Search...">
                             <span class="button-group">
                                 <button class="btn button-search button-orange" type="button"><i class="fas fa-search"></i></button>
                             </span>
                         </div>
+
                         <div class="right-nav">
                             <a href="#basket" class="btn button-outline-dark"><i class="fas fa-shopping-basket"></i> £0.00</a>
                             <a href="#checkout" class="btn button-disable">Checkout</a>
