@@ -157,4 +157,22 @@ window.onload = () => {
     initDropdown(document.getElementById('department-dropdown'), document.getElementById("menu-department"));
     initDropdown(document.getElementById('favourites-dropdown'), document.getElementById("menu-favourites"));
     initSearchBar();
+
+    Array.prototype.forEach.call(document.getElementsByClassName("dropdown"), (item) => {
+        let dropdownButton = item.getElementsByClassName('button-dropdown')[0];
+        let dropdownMenu = item.getElementsByClassName('dropdown-menu')[0];
+
+        dropdownButton.addEventListener('click', () => {
+            if (dropdownMenu.style.display === 'block') {
+                dropdownMenu.style.display = 'none'
+                dropdownButton.classList.remove('selected');
+            } else {
+               dropdownMenu.style.display = 'block'
+                dropdownButton.classList.add('selected');
+            }
+        });
+
+        item.classList.remove('dropdown-content-show');
+    });
+
 };

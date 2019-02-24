@@ -144,6 +144,10 @@ body {
 
 }
 
+.dropdown-items {
+    padding: 10px 0;
+}
+
 .search-dropdown-container {
     overflow: hidden;
     position: relative;
@@ -685,7 +689,7 @@ a.bar-item-alert:hover:after {
 
 }
 
-.dropdown-menu {
+.button-dropdown {
     padding: 0 15px;
     display: inline-block;
     border-radius: 2px;
@@ -702,27 +706,118 @@ a.bar-item-alert:hover:after {
     border: 1px solid #646464;
 }
 
-.dropdown-menu:hover {
+.button-dropdown:hover {
     background-color: #646464;
     color: white;
 }
 
-a.dropdown-menu:hover:after {
+.button-dropdown:hover:after {
     /*color: red;*/
     border-color: #eee;
 }
 
-/*.dropdown-menu i {*/
-    /*padding-left: 10px;*/
-    /*margin-left: 10px;*/
-    /*border-left: 1px solid #646464;*/
-/*}*/
+.button-dropdown.selected {
+    background-color: white;
+    border-color: #FF7F50;
+    border-bottom: none;
+    z-index: 30;
+    position: relative;
+    box-shadow: none;
+}
 
-.dropdown-menu:after {
+.button-dropdown.selected:hover, .button-dropdown.selected:hover:after {
+    background-color: white;
+    color: black;
+}
+
+.button-dropdown.selected:hover:after {
+    color: black;
+}
+
+.button-dropdown:after {
     padding-left: 10px;
     margin-left: 10px;
     border-left: 1px solid #646464;
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 5 Free", fantasy;
     font-weight: 900;
     content: "\f078";
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 300px;
+    border: 1px solid #B9B9B9;
+    z-index: 4;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.13);
+}
+
+.dropdown-menu-checkbox {
+    display: block;
+    position: relative;
+}
+
+.dropdown-menu-checkbox input[type=checkbox] {
+    visibility: hidden;
+    position: absolute;
+}
+
+.dropdown-menu-checkbox input[type=checkbox]:hover + .dropdown-menu-item:before {
+    border-color: #FF7F50;
+}
+
+.dropdown-menu-checkbox input[type=checkbox]:checked + .dropdown-menu-item:after {
+    visibility: visible;
+    border-color: white;
+}
+
+.dropdown-menu-checkbox input[type=checkbox]:checked + .dropdown-menu-item:before {
+    background-color: black;
+}
+
+.dropdown-menu-checkbox input[type=checkbox] + .dropdown-menu-item:after {
+    visibility: hidden;
+}
+
+.dropdown-menu-item {
+    height: 41px;
+    line-height: 41px;
+    width: 100%;
+    display: block;
+    padding-left: 50px;
+    font-weight: 500;
+}
+
+.dropdown-menu-item:hover {
+
+}
+
+.dropdown-menu-item::after {
+    content: "";
+    display: inline-block;
+    height: 5px;
+    width: 9px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 23px;
+    top: 11px;
+    margin-top: 3px;
+}
+
+.dropdown-menu-item::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    border: 1px solid black;
+    background-color: white;
+    /*display: block;*/
+    position: absolute;
+    left: 20px;
+    top: 11px;
 }
