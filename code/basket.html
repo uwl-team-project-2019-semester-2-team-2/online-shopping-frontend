@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GO Mart - Basket</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/basket.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script type="text/javascript" src="scripts/dropdown.js"></script>
+</head>
+<body>
+
+    <div class="header">
+        <div class="main-header">
+            <div class="top-links">
+                <div class="page-container">
+                    <div class="links-holder left">
+                    </div>
+                    <div class="links-holder right">
+                        <a href="#signin" class="top-link-item"><p>Sign in</p></a>
+                        <a href="#register" class="top-link-item"><p>Register</p></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="top-nav">
+                <div class="top-nav-holder">
+
+                    <div class="dropdown-box dropdown-search" id="search-dropdown">
+                        <div class="dropdown-content">
+                            <div class="dropdown-column" id="search-items">
+                                <a href="#cat1" class="dropdown-item">Eggs</a>
+                                <a href="#cat2" class="dropdown-item">Free Range Eggs & Chilled</a>
+                                <a href="#cat2" class="dropdown-item">Egg Noodles</a>
+                                <a href="#cat2" class="dropdown-item">Large Free Range Eggs</a>
+                                <a href="#cat2" class="dropdown-item">Egg</a>
+                                <a href="#cat2" class="dropdown-item">Scotch Eggs</a>
+                                <a href="#cat2" class="dropdown-item">Organic Eggs</a>
+                                <a href="#cat2" class="dropdown-item">Egg Fried Rice</a>
+                                <a href="#cat2" class="dropdown-item">Large Eggs</a>
+                                <a href="#cat2" class="dropdown-item">Easter Eggs</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="logo">
+                        <a class="active" href="landing.html"><span class="logo-image"></span></a>
+                    </div>
+                    <div class="top-nav-content">
+                        <!--<div class="dimmer" id="search-dimmer"></div>-->
+                        <div class="input-group search-container">
+                            <input id="search-bar" type="text" placeholder="Search...">
+                            <span class="button-group">
+                                <button class="btn button-search button-orange" type="button" id="search-button"><i class="fas fa-search"></i></button>
+                            </span>
+                        </div>
+
+                        <div class="right-nav">
+                            <a href="basket.html" class="btn button-outline-dark"><i class="fas fa-shopping-basket"></i> £0.00</a>
+                            <a href="#checkout" class="btn button-disable">Checkout</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="page-container" style="position: relative">
+                <div class="bar">
+                    <div class="items">
+                        <div class="item-group items-left">
+                            <a href="#departments" class="bar-item" id="menu-department"><p>Departments <i class="fas fa-chevron-down" style="color: black; margin-left: 5px;"></i></p></a>
+                            <a href="#offers" class="bar-item bar-item-alert"><p>Offers</p></a>
+                        </div>
+                        <div class="item-group items-right">
+                            <a href="#departments" id="menu-favourites" class="bar-item"><p>Favourites  <i class="fas fa-chevron-down" style="color: black; margin-left: 5px;"></i></p></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-box" id="department-dropdown">
+                    <div class="dropdown-content">
+                        <div class="dropdown-column">
+                            <a href="#cat1" class="dropdown-item top">View All <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Fresh & Chilled <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Bakery <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Frozen <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Beer, Wine & Spirits <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Household <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Toiletries <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Health & Medicine <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Pet <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Drinks <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">New <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-box dropdown-right dropdown-small" id="favourites-dropdown">
+                    <div class="dropdown-content">
+                        <div class="dropdown-column">
+                            <a href="#cat1" class="dropdown-item top">View All <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Fresh & Chilled <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Bakery <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Frozen <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Beer, Wine & Spirits <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Household <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Toiletries <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Health & Medicine <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Pet <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Drinks <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">New <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container basket-container">
+
+        <div class="basket-items">
+
+            <div class="card-container basket-items-table">
+                <div class="table-row table-header">
+                    <div class="col1">
+                        <p>Product</p>
+                    </div>
+                    <div class="col2">
+                        <p>Price</p>
+                    </div>
+                    <div class="col3">
+                        <p>Quantity</p>
+                    </div>
+                    <div class="col4">
+                        <p>Total</p>
+                    </div>
+                </div>
+
+                <div class="table-row">
+                    <div class="col1">
+                        <div class="table-picture-product">
+                            <div class="product-image-container">
+                                <img src="pictures/basket/product.png">
+                            </div>
+                            <div class="product-title"><p>The Happy Egg Co. 6 Free Range Eggs Medium</p></div>
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <p class="important">£1.30</p>
+                    </div>
+                    <div class="col3">
+                        <input type="text" class="text-input quantity-input" value="1">
+                    </div>
+                    <div class="col4">
+                        <p class="important">£1.30</p>
+                    </div>
+                </div>
+
+                <div class="table-row">
+                    <div class="col1">
+                        <div class="table-picture-product">
+                            <div class="product-image-container">
+                                <img src="pictures/basket/product.png">
+                            </div>
+                            <div class="product-title"><p>The Happy Egg Co. 6 Free Range Eggs Medium</p></div>
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <p class="important">£1.30</p>
+                    </div>
+                    <div class="col3">
+                        <input type="text" class="text-input quantity-input" value="1">
+                    </div>
+                    <div class="col4">
+                        <p class="important">£1.30</p>
+                    </div>
+                </div>
+
+                <div class="table-row">
+                    <div class="col1">
+                        <div class="table-picture-product">
+                            <div class="product-image-container">
+                                <img src="pictures/basket/product.png">
+                            </div>
+                            <div class="product-title"><p>The Happy Egg Co. 6 Free Range Eggs Medium</p></div>
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <p class="important">£1.30</p>
+                    </div>
+                    <div class="col3">
+                        <input type="text" class="text-input quantity-input" value="1">
+                    </div>
+                    <div class="col4">
+                        <p class="important">£1.30</p>
+                    </div>
+                </div>
+
+                <div class="table-row">
+                    <div class="col1">
+                        <div class="table-picture-product">
+                            <div class="product-image-container">
+                                <img src="pictures/basket/product.png">
+                            </div>
+                            <div class="product-title"><p>The Happy Egg Co. 6 Free Range Eggs Medium</p></div>
+                        </div>
+                    </div>
+                    <div class="col2">
+                        <p class="important">£1.30</p>
+                    </div>
+                    <div class="col3">
+                        <input type="text" class="text-input quantity-input" value="1">
+                    </div>
+                    <div class="col4">
+                        <p class="important">£1.30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="table-bottom">
+            <div class="items-bottom-right">
+                <h3>Subtotal (5 items): £6.50</h3>
+            </div>
+            </div>
+        </div>
+        <div class="basket-items-right">
+            <div class="checkout-content card-container">
+                <h3>Subtotal (5 items): £6.50</h3>
+                <a href="#checkout" class="btn button-orange button-checkout">Proceed to Checkout</a>
+            </div>
+
+            <div class="checkout-content card-container">
+                <h3>Buy it again</h3>
+
+                <div class="buy-again-product">
+
+                    <div class="product-description">
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="footer-container page-container">
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <div class="footer-link-group">
+                        <h4>Help</h4>
+                        <ul>
+                            <li><a href="#help" class="footer-link">Help & Support</a></li>
+                            <li><a href="#delivery" class="footer-link">Delivery information</a></li>
+                            <li><a href="#returns" class="footer-link">Returns, Exchanges & Refunds</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-link-group">
+                        <h4>Follow us</h4>
+                        <ul>
+                            <li><a href="#facebook" class="footer-link link-icon"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                            <li><a href="#instagram" class="footer-link link-icon"><i class="fab fa-instagram"></i> Instagram</a></li>
+                            <li><a href="#twitter" class="footer-link link-icon"><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href="#pinterest" class="footer-link link-icon" ><i class="fab fa-pinterest"></i> Pinterest</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-link-group email-text-box">
+                        <h4>Mailing list</h4>
+                        <p>Receive the latest offers and promotions as well as <b>10% off</b> your first order.</p>
+                        <div class="input-group">
+                            <input type="text" placeholder="Enter your email address">
+                            <span class="button-group">
+                                    <button class="btn button-orange" type="button">Subscribe</button>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-container">
+            <div class="footer-bottom-holder">
+                <div class="footer-bottom-content left">
+                    <p class="footer-text">Copyright © Go Mart 2019</p>
+                </div>
+                <div class="footer-bottom-content right">
+                    <a href="#cookies" class="footer-text">Cookies</a>
+                    <a href="#privacy" class="footer-text">Privacy</a>
+                    <a href="#terms" class="footer-text">Terms & Conditions</a>
+                    <a href="#legal" class="footer-text">Legal Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
