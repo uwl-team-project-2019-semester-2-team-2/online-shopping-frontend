@@ -1,0 +1,194 @@
+.search-content {
+    padding: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-page {
+    padding: 20px 0;
+}
+
+.search-content .search-item:nth-of-type(5n+1) {
+    margin-left: 0;
+}
+
+.search-content .search-item:nth-of-type(5n+5) {
+    margin-right: 0;
+}
+
+.search-content .search-item:nth-of-type(-n+5) {
+    margin-top: 0;
+}
+
+.search-item {
+    margin: 5px;
+    width: 232px;
+    height: 400px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+}
+
+.search-item .inner {
+    height: 360px;
+    padding: 20px;
+    position: relative;
+}
+
+.search-results-text {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.search-item .item-title {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.search-item .item-subtitle {
+    font-size: 14px;
+    color: #7A7A7A;
+    margin-top: 5px;
+}
+
+.title-container p {
+    margin: 0;
+}
+
+.price-container {
+    display: flex;
+    margin: 10px 0;
+}
+
+.price-container .price {
+
+}
+
+.price-container .sub-price {
+    position: relative;
+    width: 100%;
+}
+
+.price-container h3 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.price-container .pricing-thing {
+    margin: 0 0 0 5px;
+    font-size: 13px;
+    color: #7A7A7A;
+    position: absolute;
+    bottom: 4px;
+}
+
+.search-item .item-image {
+    width: 192px;
+    height: 192px;
+}
+
+.item-image img {
+    width: 100%;
+    height: auto;
+}
+
+.search-item .add-button-area {
+    display: flex;
+    position: relative;
+    height: 36px;
+}
+
+.add-button-area .right {
+    display: inline;
+    position: absolute;
+    right: 0;
+}
+
+.add-button-area .left {
+    display: flex;
+    position: absolute;
+    left: 0;
+}
+
+.quantity-input {
+    height: 36px !important;
+    width: 56px !important;
+}
+
+.item-bottom {
+    position: absolute;
+    bottom: 20px;
+    width: 192px;
+}
+
+.add-button-area .add-button {
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    padding: 0;
+    margin-left: 5px;
+}
+
+.add-button i {
+    margin: 0;
+}
+
+.dropdown-container {
+    position: relative;
+    margin-top: 15px;
+}
+
+.dropdown-container .left {
+    display: inline-block;
+}
+
+.dropdown-container .right {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+
+.pagination {
+    position: relative;
+}
+
+.pagination .left {
+    display: inline;
+}
+
+.pagination .right {
+    display: inline;
+    position: absolute;
+    right: 0;
+}
+
+.pagination a {
+    width: 41px;
+    box-shadow: none;
+}
+
+.pagination .selected {
+    background-color: #0B3C5D;
+    color: white;
+    cursor: default;
+}
+
+.button-pagination {
+    width: 41px;
+    height: 41px;
+}
+
+.button-favourite {
+    width: 36px;
+    height: 36px;
+    box-shadow: none;
+    font-size: 24px;
+    background: url("../glyph/heart-disabled.png") no-repeat;
+    background-size: 36px;
+}
+
+.button-favourite.enabled {
+    background: url("../glyph/heart-enabled.png")
+}

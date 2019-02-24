@@ -6,16 +6,11 @@
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" href="styles/landing.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
     <script type="text/javascript" src="scripts/dropdown.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800,900');
-    </style>
-
 </head>
 <body>
 
-<div class="dimmer" id="menu-dimmer"></div>
+    <div class="dimmer" id="menu-dimmer"></div>
     <div class="header">
         <div class="main-header">
             <div class="top-links">
@@ -36,7 +31,7 @@
 
                     <div class="dropdown-box dropdown-search" id="search-dropdown">
                         <div class="dropdown-content">
-                            <div class="dropdown-column">
+                            <div class="dropdown-column" id="search-items">
                                 <a href="#cat1" class="dropdown-item">Eggs</a>
                                 <a href="#cat2" class="dropdown-item">Free Range Eggs & Chilled</a>
                                 <a href="#cat2" class="dropdown-item">Egg Noodles</a>
@@ -52,23 +47,22 @@
                     </div>
 
                     <div class="logo">
-                        <a class="active" href="#home"><span class="logo-image"></span></a>
+                        <a class="active" href="landing.html"><span class="logo-image"></span></a>
                     </div>
                     <div class="top-nav-content">
                         <!--<div class="dimmer" id="search-dimmer"></div>-->
                         <div class="input-group search-container">
                             <input id="search-bar" type="text" placeholder="Search...">
                             <span class="button-group">
-                                <button class="btn button-search button-orange" type="button"><i class="fas fa-search"></i></button>
+                                <button class="btn button-search button-orange" type="button" id="search-button"><i class="fas fa-search"></i></button>
                             </span>
                         </div>
 
                         <div class="right-nav">
-                            <a href="#basket" class="btn button-outline-dark"><i class="fas fa-shopping-basket"></i> £0.00</a>
+                            <a href="basket.html" class="btn button-outline-dark"><i class="fas fa-shopping-basket"></i> £0.00</a>
                             <a href="#checkout" class="btn button-disable">Checkout</a>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -203,7 +197,7 @@
                                 <div class="offer-tile">
                                     <h3>£1</h3>
                                 </div>
-                                <img src="pictures/landing/image1.png" alt="Italian Trulli">
+                                <img src="pictures/landing/image1.png">
                             </div>
                             <h5 class="offer-text">Tropicana 100%</h5>
                         </a>
@@ -212,7 +206,7 @@
                                 <div class="offer-tile">
                                     <h3>£2</h3>
                                 </div>
-                                <img src="pictures/landing/image2.png" alt="Italian Trulli">
+                                <img src="pictures/landing/image2.png">
                             </div>
                             <h5 class="offer-text">Cravendale Semi Skimmed Milk</h5>
                         </a>
@@ -221,7 +215,7 @@
                                 <div class="offer-tile">
                                     <h3>£1</h3>
                                 </div>
-                                <img src="pictures/landing/image3.png" alt="Italian Trulli">
+                                <img src="pictures/landing/image3.png">
                             </div>
                             <h5 class="offer-text">Hovis Best of Both Medium</h5>
                         </a>
@@ -230,7 +224,7 @@
                                 <div class="offer-tile">
                                     <h3>£1</h3>
                                 </div>
-                                <img src="pictures/landing/image4.png" alt="Italian Trulli">
+                                <img src="pictures/landing/image4.png">
                             </div>
                             <h5 class="offer-text">Mission Deli Original Wraps</h5>
                         </a>
@@ -239,7 +233,7 @@
                                 <div class="offer-tile">
                                     <h3>£9</h3>
                                 </div>
-                                <img src="pictures/landing/image5.png" alt="Italian Trulli">
+                                <img src="pictures/landing/image5.png">
                             </div>
                             <h5 class="offer-text">Pedigree Vital Protection Jelly</h5>
                         </a>

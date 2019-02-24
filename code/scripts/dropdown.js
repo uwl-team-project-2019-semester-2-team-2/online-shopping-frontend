@@ -4,7 +4,7 @@ function toggleMenuLights(lightsOn) {
 
 function initDropdown(dropdown, menuItem) {
     let searchBar = document.getElementById('search-dropdown');
-    let dimmer = document.getElementById('menu-dimmer');
+
     let isMouseOverMenu = false;
     let isMouseOverDropDown = false;
     let timeoutId;
@@ -66,28 +66,83 @@ function initDropdown(dropdown, menuItem) {
 }
 
 function initSearchBar() {
+    let typingTimeout;
+    let searchButton = document.getElementById('search-button');
     let searchBar = document.getElementById('search-bar');
     let dropdown = document.getElementById('search-dropdown');
+    let currentString = '';
 
     window.onresize = () => adjustSearchBar(dropdown, searchBar.getBoundingClientRect());
 
-    searchBar.addEventListener('input', () => {
-        if (searchBar.value === '') {
-            dropdown.style.display = 'none';
-        } else {
-            Array.prototype.forEach.call(document.getElementsByClassName("dropdown-content-show"), (item) => {
-               item.classList.remove('dropdown-content-show');
-            });
+    searchButton.addEventListener('click', () => location.href = "search.html");
 
-            toggleMenuLights(false);
-            adjustSearchBar(dropdown, searchBar.getBoundingClientRect());
-            dropdown.style.display = 'block';
+    searchBar.addEventListener('input', () => {
+        if (dropdown.style.display === 'none') {
+            Array.prototype.forEach.call(document.getElementsByClassName("dropdown-content-show"), (item) => {
+                item.classList.remove('dropdown-content-show');
+            });
         }
+    });
+
+    searchBar.addEventListener('keyup', () => {
+        clearTimeout(typingTimeout);
+
+        typingTimeout = window.setTimeout(() => {
+            if (searchBar.value === currentString || searchBar.value === '') {
+                return;
+            }
+
+            currentString = searchBar.value;
+
+            let request = new XMLHttpRequest();
+            request.open('GET', 'https://search.api.tesco.com/suggestion/?distchannel=ghs&limit=10&query=' + searchBar.value, true);
+
+            request.onreadystatechange = () => {
+
+                if (request.readyState === 4 && request.status === 200) {
+                    let data = JSON.parse(request.response);
+                    let results = data['results'];
+
+                    if (results.length === 0) {
+                        dropdown.style.display = 'none';
+                        currentString = '';
+                        return;
+                    }
+
+                    let searchItems = document.getElementById('search-items');
+
+                    while (searchItems.firstChild) {
+                        searchItems.removeChild(searchItems.firstChild);
+                    }
+
+                    results.forEach(result => {
+                        let link = document.createElement('a');
+
+                        let linkText = document.createTextNode(result['query']);
+
+                        link.href = '#' + result['query'];
+                        link.classList.add('dropdown-item');
+                        link.appendChild(linkText);
+
+                        searchItems.appendChild(link);
+                    });
+
+                    adjustSearchBar(dropdown, searchBar.getBoundingClientRect());
+                    dropdown.style.display = 'block';
+                } else {
+                    dropdown.style.display = 'none';
+                    currentString = '';
+                }
+            };
+            request.send();
+
+        }, 500);
     });
 
     document.addEventListener('click', (event) => {
         if (event.target !== searchBar || event.target !== dropdown) {
             dropdown.style.display = 'none';
+            currentString = '';
         }
     });
 }

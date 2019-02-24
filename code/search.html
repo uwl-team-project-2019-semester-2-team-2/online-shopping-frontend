@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Go Mart - Search</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/search.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script type="text/javascript" src="scripts/dropdown.js"></script>
+</head>
+
+<body>
+    <div class="dimmer" id="menu-dimmer"></div>
+
+    <div class="header">
+        <div class="main-header">
+            <div class="top-links">
+                <div class="page-container">
+                    <div class="links-holder left">
+                    </div>
+                    <div class="links-holder right">
+                        <a href="#signin" class="top-link-item"><p>Sign in</p></a>
+                        <a href="#register" class="top-link-item"><p>Register</p></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="top-nav">
+                <div class="top-nav-holder">
+
+                    <div class="dropdown-box dropdown-search" id="search-dropdown">
+                        <div class="dropdown-content">
+                            <div class="dropdown-column" id="search-items">
+                                <a href="#cat1" class="dropdown-item">Eggs</a>
+                                <a href="#cat2" class="dropdown-item">Free Range Eggs & Chilled</a>
+                                <a href="#cat2" class="dropdown-item">Egg Noodles</a>
+                                <a href="#cat2" class="dropdown-item">Large Free Range Eggs</a>
+                                <a href="#cat2" class="dropdown-item">Egg</a>
+                                <a href="#cat2" class="dropdown-item">Scotch Eggs</a>
+                                <a href="#cat2" class="dropdown-item">Organic Eggs</a>
+                                <a href="#cat2" class="dropdown-item">Egg Fried Rice</a>
+                                <a href="#cat2" class="dropdown-item">Large Eggs</a>
+                                <a href="#cat2" class="dropdown-item">Easter Eggs</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="logo">
+                        <a class="active" href="landing.html"><span class="logo-image"></span></a>
+                    </div>
+                    <div class="top-nav-content">
+                        <!--<div class="dimmer" id="search-dimmer"></div>-->
+                        <div class="input-group search-container">
+                            <input id="search-bar" type="text" placeholder="Search..." value="eggs">
+                            <span class="button-group">
+                                <button class="btn button-search button-orange" type="button" id="search-button"><i class="fas fa-search"></i></button>
+                            </span>
+                        </div>
+
+                        <div class="right-nav">
+                            <a href="basket.html" class="btn button-outline-dark"><i class="fas fa-shopping-basket"></i> £0.00</a>
+                            <a href="#checkout" class="btn button-disable">Checkout</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="page-container" style="position: relative">
+                <div class="bar">
+                    <div class="items">
+                        <div class="item-group items-left">
+                            <a href="#departments" class="bar-item" id="menu-department"><p>Departments <i class="fas fa-chevron-down" style="color: black; margin-left: 5px;"></i></p></a>
+                            <a href="#offers" class="bar-item bar-item-alert"><p>Offers</p></a>
+                        </div>
+                        <div class="item-group items-right">
+                            <a href="#departments" id="menu-favourites" class="bar-item"><p>Favourites  <i class="fas fa-chevron-down" style="color: black; margin-left: 5px;"></i></p></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-box" id="department-dropdown">
+                    <div class="dropdown-content">
+                        <div class="dropdown-column">
+                            <a href="#cat1" class="dropdown-item top">View All <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Fresh & Chilled <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Bakery <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Frozen <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Beer, Wine & Spirits <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Household <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Toiletries <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Health & Medicine <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Pet <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Drinks <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">New <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown-box dropdown-right dropdown-small" id="favourites-dropdown">
+                    <div class="dropdown-content">
+                        <div class="dropdown-column">
+                            <a href="#cat1" class="dropdown-item top">View All <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Fresh & Chilled <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Bakery <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Frozen <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Beer, Wine & Spirits <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Household <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Toiletries <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Health & Medicine <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Pet <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">Drinks <i class="fas fa-chevron-right"></i></a>
+                            <a href="#cat2" class="dropdown-item">New <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="page-container search-page">
+        <div class="search-text">
+            <h4 class="search-results-text">1-25 of 140 results for "eggs"</h4>
+        </div>
+
+        <div class="dropdown-container">
+            <div class="left">
+                <a href="#drop" class="dropdown-menu">Categories</a>
+                <a href="#drop" class="dropdown-menu">Brands</a>
+                <a href="#drop" class="dropdown-menu">Lifestyle & Dietary</a>
+            </div>
+            <div class="right">
+                <a href="#drop" class="dropdown-menu">Relevance</a>
+            </div>
+        </div>
+
+        <div class="search-content">
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite enabled"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <div class="inner">
+                    <div class="item-image">
+                        <img src="pictures/landing/image3.png">
+                    </div>
+                    <div class="title-container">
+                        <p class="item-title">Buxton Natural Mineral Water Still</p>
+                    </div>
+
+                    <div class="item-bottom">
+                        <p class="item-subtitle">8 x 500ml</p>
+
+                        <div class="price-container">
+                            <div class="price">
+                                <h3>£1.30</h3>
+                            </div>
+                            <div class="sub-price">
+                                <p class="pricing-thing">21.7p each</p>
+                            </div>
+                        </div>
+
+                        <div class="add-button-area">
+                            <div class="left">
+                                <input type="text" class="text-input quantity-input" value="1">
+                                <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                            </div>
+                            <div class="right">
+                                <div class="favourite-item-container">
+                                    <a href="#lol" class="btn button-favourite"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pagination">
+
+            <div class="left">
+                <a href="#back" class="btn button-disable button-pagination"><i class="fas fa-chevron-left"></i></a>
+                <a class="btn button-outline-dark button-pagination selected">1</a>
+                <a href="#back" class="btn button-outline-dark button-pagination">2</a>
+                <a href="#back" class="btn button-outline-dark button-pagination">3</a>
+                <a href="#back" class="btn button-outline-dark button-pagination">4</a>
+                <a href="#back" class="btn button-orange button-pagination"><i class="fas fa-chevron-right"></i></a>
+            </div>
+
+            <div class="right">
+                <a href="#back" class="btn button-orange"><i class="fas fa-chevron-up"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-container page-container">
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <div class="footer-link-group">
+                        <h4>Help</h4>
+                        <ul>
+                            <li><a href="#help" class="footer-link">Help & Support</a></li>
+                            <li><a href="#delivery" class="footer-link">Delivery information</a></li>
+                            <li><a href="#returns" class="footer-link">Returns, Exchanges & Refunds</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-link-group">
+                        <h4>Follow us</h4>
+                        <ul>
+                            <li><a href="#facebook" class="footer-link link-icon"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                            <li><a href="#instagram" class="footer-link link-icon"><i class="fab fa-instagram"></i> Instagram</a></li>
+                            <li><a href="#twitter" class="footer-link link-icon"><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href="#pinterest" class="footer-link link-icon" ><i class="fab fa-pinterest"></i> Pinterest</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-link-group email-text-box">
+                        <h4>Mailing list</h4>
+                        <p>Receive the latest offers and promotions as well as <b>10% off</b> your first order.</p>
+                        <div class="input-group">
+                            <input type="text" placeholder="Enter your email address">
+                            <span class="button-group">
+                                    <button class="btn button-orange" type="button">Subscribe</button>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-container">
+            <div class="footer-bottom-holder">
+                <div class="footer-bottom-content left">
+                    <p class="footer-text">Copyright © Go Mart 2019</p>
+                </div>
+                <div class="footer-bottom-content right">
+                    <a href="#cookies" class="footer-text">Cookies</a>
+                    <a href="#privacy" class="footer-text">Privacy</a>
+                    <a href="#terms" class="footer-text">Terms & Conditions</a>
+                    <a href="#legal" class="footer-text">Legal Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
