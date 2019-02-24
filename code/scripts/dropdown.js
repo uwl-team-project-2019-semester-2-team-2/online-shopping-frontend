@@ -164,15 +164,20 @@ window.onload = () => {
 
         dropdownButton.addEventListener('click', () => {
             if (dropdownMenu.style.display === 'block') {
-                dropdownMenu.style.display = 'none'
+                dropdownMenu.style.display = 'none';
                 dropdownButton.classList.remove('selected');
             } else {
-               dropdownMenu.style.display = 'block'
+                dropdownMenu.style.display = 'block';
                 dropdownButton.classList.add('selected');
             }
         });
 
-        item.classList.remove('dropdown-content-show');
+        document.addEventListener('click', (event) => {
+            if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.style.display = 'none';
+                dropdownButton.classList.remove('selected');
+            }
+        });
     });
 
 };
