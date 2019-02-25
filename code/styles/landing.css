@@ -218,6 +218,7 @@ a.extra-shit-item:hover p {
     margin: 0;
     font-size: 18px;
     font-weight: 500;
+    letter-spacing: 1px;
 }
 
 .box-grey .categories {
@@ -229,6 +230,8 @@ a.extra-shit-item:hover p {
     background-color: white;
     margin: 30px 0;
     border-radius: 5px;
+    border: 1px solid #B9B9B9;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
 }
 
 .box-white p {

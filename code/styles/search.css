@@ -22,10 +22,11 @@
 
 .search-item {
     margin: 5px;
-    width: 232px;
+    width: 230px;
     height: 370px;
     background: white;
     border-radius: 5px;
+    border: 1px solid #B9B9B9;
     box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
 }
 
@@ -159,6 +160,10 @@
     display: inline-block;
 }
 
+.dropdown-container .left div {
+    margin-right: 6px;
+}
+
 .dropdown-container .right {
     display: inline-block;
     position: absolute;
@@ -206,4 +211,83 @@
 
 .button-favourite.enabled {
     background: url("../glyph/heart-enabled.png")
+}
+
+.crumbs-container {
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.breadcrumbs {
+    display: inline-flex;
+    line-height: 38px;
+}
+
+.breadcrumbs a {
+    color: black;
+    text-decoration: none;
+}
+
+.breadcrumbs a[href]:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs .crumb {
+    display: inline;
+}
+
+.breadcrumbs .crumb:last-of-type::after {
+    content: "";
+}
+
+.breadcrumbs .crumb::after {
+    margin: 0 10px;
+    font-family: "Font Awesome 5 Free", fantasy;
+    font-weight: 900;
+    content: '\f054';
+    font-size: 12px;
+    color: #808080;
+}
+
+.breadcrumbs .crumb .current {
+    font-weight: 600;
+}
+
+.filters {
+    line-height: 38px;
+}
+
+.filters .filter:first-of-type::before {
+    margin: 0 10px;
+    /* font-family: "Font Awesome 5 Free", fantasy; */
+    font-weight: 600;
+    content: '/';
+    font-size: 12px;
+    color: #808080;
+}
+
+.filters .filter a {
+    color: black;
+    text-decoration: none;
+}
+
+.filters .filter a:hover::after {
+    color: #FF7F50;
+}
+
+
+.filters .filter a:hover {
+    /*color: #B00020;*/
+}
+
+
+
+.filters .filter a::after {
+    margin: 0 5px;
+    font-family: "Font Awesome 5 Free", fantasy;
+    font-weight: 900;
+    content: '\f057';
+    font-size: 13px;
+    color: black;
 }

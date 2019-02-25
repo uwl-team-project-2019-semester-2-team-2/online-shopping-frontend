@@ -2,13 +2,11 @@ function toggleMenuLights(lightsOn) {
     document.getElementById('menu-dimmer').classList.toggle('on', lightsOn);
 }
 
-function initDropdown(dropdown, menuItem) {
+function initNavigationDropdown(dropdown, menuItem) {
     let searchBar = document.getElementById('search-dropdown');
-
     let isMouseOverMenu = false;
     let isMouseOverDropDown = false;
     let timeoutId;
-
 
     menuItem.addEventListener("click", () => {
         isMouseOverMenu = true;
@@ -20,7 +18,7 @@ function initDropdown(dropdown, menuItem) {
         timeoutId = null;
     });
 
-    menuItem.addEventListener("mouseenter",() => {
+    menuItem.addEventListener("mouseenter", () => {
         isMouseOverMenu = true;
 
         if (document.getElementsByClassName("dropdown-content-show").length > 0) {
@@ -35,7 +33,7 @@ function initDropdown(dropdown, menuItem) {
         }
     });
 
-    menuItem.addEventListener("mouseleave",() => {
+    menuItem.addEventListener("mouseleave", () => {
         isMouseOverMenu = false;
         clearTimeout(timeoutId);
 
@@ -117,7 +115,6 @@ function initSearchBar() {
 
                     results.forEach(result => {
                         let link = document.createElement('a');
-
                         let linkText = document.createTextNode(result['query']);
 
                         link.href = '#' + result['query'];
@@ -140,7 +137,7 @@ function initSearchBar() {
     });
 
     document.addEventListener('click', (event) => {
-        if (event.target !== searchBar || event.target !== dropdown) {
+        if (!searchBar.contains(event.target) && !dropdown.contains(event.target)) {
             dropdown.style.display = 'none';
             currentString = '';
         }
@@ -153,11 +150,7 @@ function adjustSearchBar(dropdown, rect) {
     dropdown.style.width = (rect.right - rect.left - 1) + 'px';
 }
 
-window.onload = () => {
-    initDropdown(document.getElementById('department-dropdown'), document.getElementById("menu-department"));
-    initDropdown(document.getElementById('favourites-dropdown'), document.getElementById("menu-favourites"));
-    initSearchBar();
-
+function initPageDropdowns() {
     Array.prototype.forEach.call(document.getElementsByClassName("dropdown"), (item) => {
         let dropdownButton = item.getElementsByClassName('button-dropdown')[0];
         let dropdownMenu = item.getElementsByClassName('dropdown-menu')[0];
@@ -179,5 +172,11 @@ window.onload = () => {
             }
         });
     });
+}
 
+window.onload = () => {
+    initNavigationDropdown(document.getElementById('department-dropdown'), document.getElementById("menu-department"));
+    initNavigationDropdown(document.getElementById('favourites-dropdown'), document.getElementById("menu-favourites"));
+    initSearchBar();
+    initPageDropdowns();
 };
