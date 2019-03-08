@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/landing.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/dropdown.js') }}"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body>
+
+    {% include 'header.j2' %}}
+
+    <div class="banner">
+        <div class="banner-rect">
+            <div class="banner-container">
+                <div class="banner-item">
+                    <h1>Low price promise</h1>
+                    <p>We pride ourselves in giving our customers the best possible value for money.</p>
+                    <div class="banner-button">
+                        <a href="#landingbutton" class="btn btn-outline-white-trans" style="width: 200px">Learn more</a>
+                    </div>
+                </div>
+
+                <div class="banner-box">
+                    <p class="title">Welcome to <b style="font-weight: 700">GO Mart</b> online</p>
+                    <p class="subtitle">Fresh groceries delivered to your door.</p>
+                    <div class="button-area">
+                        <a href="#register" class="btn button-orange banner-button fill-button">Register to start shopping</a>
+                        <a href="#signin" class="btn button-outline-dark banner-button">Already a customer? Sign in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box box-grey">
+            <h2 class="title">Shop by category</h2>
+            <div class="categories">
+                <div class="button-row">
+                        {% for department in departments %}
+                            <a href="#department-{{ department.id }}" class="btn button-outline-grey cat-button">{{ department.name }}</a>
+                        {% endfor %}
+                </div>
+            </div>
+            <div class="button-column">
+                <a href="#viewall" class="btn button-grey content-button content-button">View all</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="page-container">
+            <div class="title">
+                <h2>Offers of the week</h2>
+            </div>
+            <div class="box box-white">
+                <div class="offer-carousel">
+                    <div class="offer-buttons">
+                        <div class="offer-button button-left"><i class="fas fa-chevron-left"></i></div>
+                        <div class="offer-button button-right"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                    <div class="offer-row">
+                        <a href="#item1" class="offer-item">
+                            <div class="offer-image">
+                                <div class="offer-tile">
+                                    <h3>£1</h3>
+                                </div>
+                                <img src="pictures/landing/image1.png">
+                            </div>
+                            <h5 class="offer-text">Tropicana 100%</h5>
+                        </a>
+                        <a href="#item2" class="offer-item">
+                            <div class="offer-image">
+                                <div class="offer-tile">
+                                    <h3>£2</h3>
+                                </div>
+                                <img src="pictures/landing/image2.png">
+                            </div>
+                            <h5 class="offer-text">Cravendale Semi Skimmed Milk</h5>
+                        </a>
+                        <a href="#item3" class="offer-item">
+                            <div class="offer-image">
+                                <div class="offer-tile">
+                                    <h3>£1</h3>
+                                </div>
+                                <img src="pictures/landing/image3.png">
+                            </div>
+                            <h5 class="offer-text">Hovis Best of Both Medium</h5>
+                        </a>
+                        <a href="#item4" class="offer-item">
+                            <div class="offer-image">
+                                <div class="offer-tile">
+                                    <h3>£1</h3>
+                                </div>
+                                <img src="pictures/landing/image4.png">
+                            </div>
+                            <h5 class="offer-text">Mission Deli Original Wraps</h5>
+                        </a>
+                        <a href="#item5" class="offer-item">
+                            <div class="offer-image">
+                                <div class="offer-tile">
+                                    <h3>£9</h3>
+                                </div>
+                                <img src="pictures/landing/image5.png">
+                            </div>
+                            <h5 class="offer-text">Pedigree Vital Protection Jelly</h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="button-column">
+                    <a href="#shopoffers" class="btn button-orange content-button">Shop offers</a>
+                </div>
+            </div>
+
+            <div class="title">
+                <h2>Why our customers choose us</h2>
+            </div>
+            <div class="box box-white">
+                <div class="quotes">
+                    <div class="quote-left quote">
+                        <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p>
+                        <h4>Barry, Middlesbrough</h4>
+                    </div>
+                    <div class="quote-right quote">
+                        <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p>
+                        <h4>Steve, Gloucestershire</h4>
+                    </div>
+                </div>
+                <div class="button-column">
+                    <a href="#findoutmore" class="btn button-grey content-button">Find out more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.j2' %}}
+

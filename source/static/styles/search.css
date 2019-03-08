@@ -1,0 +1,293 @@
+.search-content {
+    padding: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-page {
+    padding: 20px 0;
+}
+
+.search-content .search-item:nth-of-type(5n+1) {
+    margin-left: 0;
+}
+
+.search-content .search-item:nth-of-type(5n+5) {
+    margin-right: 0;
+}
+
+.search-content .search-item:nth-of-type(-n+5) {
+    margin-top: 0;
+}
+
+.search-item {
+    margin: 5px;
+    width: 230px;
+    height: 370px;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid #B9B9B9;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+}
+
+.search-item .inner {
+    height: 330px;
+    padding: 20px;
+    position: relative;
+}
+
+.inner .title-container {
+    height: 38px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.search-results-text {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.search-item .item-title {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.search-item .item-subtitle {
+    font-size: 14px;
+    color: #7A7A7A;
+    margin: 0;
+}
+
+.title-container p {
+    margin: 0;
+}
+
+.title-container a {
+    color: black;
+    text-decoration: none;
+}
+
+.title-container a:hover {
+    color: #258EA0;
+}
+
+.price-container {
+    display: flex;
+    margin: 0 0 10px 0;
+}
+
+.price-container .price {
+
+}
+
+.price-container .sub-price {
+    position: relative;
+    width: 100%;
+}
+
+.price-container h3 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.price-container .pricing-thing {
+    margin: 0 0 0 5px;
+    font-size: 13px;
+    color: #7A7A7A;
+    position: absolute;
+    bottom: 4px;
+}
+
+.search-item .item-image {
+    width: 192px;
+    height: 192px;
+}
+
+.item-image img {
+    width: 100%;
+    height: auto;
+}
+
+.search-item .add-button-area {
+    display: flex;
+    position: relative;
+    height: 36px;
+}
+
+.add-button-area .right {
+    display: inline;
+    position: absolute;
+    right: 0;
+}
+
+.add-button-area .left {
+    display: flex;
+    position: absolute;
+    left: 0;
+}
+
+.quantity-input {
+    height: 36px !important;
+    width: 56px !important;
+}
+
+.item-bottom {
+    position: absolute;
+    bottom: 20px;
+    width: 192px;
+}
+
+.add-button-area .add-button {
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    padding: 0;
+    margin-left: 5px;
+}
+
+.add-button i {
+    margin: 0;
+}
+
+.dropdown-container {
+    position: relative;
+    margin-top: 15px;
+}
+
+.dropdown-container .left {
+    display: inline-block;
+}
+
+.dropdown-container .left div {
+    margin-right: 6px;
+}
+
+.dropdown-container .right {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+
+.pagination {
+    position: relative;
+}
+
+.pagination .left {
+    display: inline;
+}
+
+.pagination .right {
+    display: inline;
+    position: absolute;
+    right: 0;
+}
+
+.pagination a {
+    width: 41px;
+    box-shadow: none;
+}
+
+.pagination .selected {
+    background-color: #0B3C5D;
+    color: white;
+    cursor: default;
+}
+
+.button-pagination {
+    width: 41px;
+    height: 41px;
+}
+
+.button-favourite {
+    width: 36px;
+    height: 36px;
+    box-shadow: none;
+    font-size: 24px;
+    background: url("../glyph/heart-disabled.png") no-repeat;
+    background-size: 36px;
+}
+
+.button-favourite.enabled {
+    background: url("../glyph/heart-enabled.png")
+}
+
+.crumbs-container {
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.breadcrumbs {
+    display: inline-flex;
+    line-height: 38px;
+}
+
+.breadcrumbs a {
+    color: black;
+    text-decoration: none;
+}
+
+.breadcrumbs a[href]:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs .crumb {
+    display: inline;
+}
+
+.breadcrumbs .crumb:last-of-type::after {
+    content: "";
+}
+
+.breadcrumbs .crumb::after {
+    margin: 0 10px;
+    font-family: "Font Awesome 5 Free", fantasy;
+    font-weight: 900;
+    content: '\f054';
+    font-size: 12px;
+    color: #808080;
+}
+
+.breadcrumbs .crumb .current {
+    font-weight: 600;
+}
+
+.filters {
+    line-height: 38px;
+}
+
+.filters .filter:first-of-type::before {
+    margin: 0 10px;
+    /* font-family: "Font Awesome 5 Free", fantasy; */
+    font-weight: 600;
+    content: '/';
+    font-size: 12px;
+    color: #808080;
+}
+
+.filters .filter a {
+    color: black;
+    text-decoration: none;
+}
+
+.filters .filter a:hover::after {
+    color: #FF7F50;
+}
+
+
+.filters .filter a:hover {
+    /*color: #B00020;*/
+}
+
+
+
+.filters .filter a::after {
+    margin: 0 5px;
+    font-family: "Font Awesome 5 Free", fantasy;
+    font-weight: 900;
+    content: '\f057';
+    font-size: 13px;
+    color: black;
+}
