@@ -31,7 +31,7 @@
                 <div class="right-of-logo">
                     <div class="top-nav-content">
                         <div class="input-group search-container">
-                            <input id="search-bar" type="text" placeholder="Search...">
+                            <input id="search-bar" type="text" placeholder="Search..." {% if term %}value="{{ term }}"{% endif %}>
                             <span class="button-group">
                                 <button class="btn button-search button-orange" type="button" id="search-button"><i class="fas fa-search"></i></button>
                             </span>
