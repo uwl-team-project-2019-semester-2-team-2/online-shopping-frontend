@@ -9,10 +9,11 @@ search = Blueprint('search', __name__, url_prefix='/search')
 def index(term):
     page = request.args.get('page', default=1, type=int)
     order = request.args.get('order', default='relevance', type=str)
+    filter = request.args.get('filter', default='', type=str)
 
     departments = api_util.get('/department')
-    products = api_util.get('/search/' + term + '?page=' + str(page))
-    pages = math.ceil(products['count'] / 25)
+    products = api_util.get('/search/' + term + '?filter=' + filter + '&page=' + str(page))
+    pages = math.ceil(products['page_info']['count'] / 25)
 
     print(pages)
     return render_template(

@@ -178,9 +178,46 @@ function initPageDropdowns() {
     });
 }
 
+function appendUrlParam(key, value) {
+    key = encodeURI(key);
+    value = encodeURI(value);
+
+    let url = new URL(window.location.href);
+    let searchParams = url.searchParams
+
+    if (!searchParams.has(key)) {
+        searchParams.set(key, value);
+    } else {
+        let params = searchParams.get(key).split(",");
+        params.push(value)
+        searchParams.set(key, params.join(","));
+    }
+
+    console.log(url);
+
+    return url
+}
+
 window.onload = () => {
     initNavigationDropdown(document.getElementById('department-dropdown'), document.getElementById("menu-department"));
     initNavigationDropdown(document.getElementById('favourites-dropdown'), document.getElementById("menu-favourites"));
     initSearchBar();
     initPageDropdowns();
+
+
+    Array.prototype.forEach.call(document.getElementsByClassName("dropdown-dietary-item"), (item) => {
+
+        item.addEventListener('change', (event) => {
+            let dietaryUrl = item.dataset.url;
+            let url;
+            if (event.target.checked) {
+                url = appendUrlParam("filter", dietaryUrl);
+                console.log(url.href);
+            } else {
+
+            }
+            location.href = url.href;
+        });
+    });
+
 };

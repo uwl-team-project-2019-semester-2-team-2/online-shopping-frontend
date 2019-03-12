@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/search.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/landing.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='scripts/dropdown.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/search.js') }}"></script>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
@@ -36,7 +37,7 @@
         <div class="dropdown-container">
             <div class="left">
                 <div class="dropdown" id="categories">
-                    <a href="#drop" class="btn button-dropdown">Categories</a>
+                    <a class="btn button-dropdown">Categories</a>
 
                     <div class="dropdown-menu">
                         <div class="dropdown-items">
@@ -56,13 +57,12 @@
                                 <input type="checkbox" id="categories_checkbox_4">
                                 <label for="categories_checkbox_4" class="dropdown-menu-item">Ready Meals</label>
                             </div>
-
                         </div>
                     </div>
                 </div>
 
                 <div class="dropdown" id="brands">
-                    <a href="#drop" class="btn button-dropdown">Brands</a>
+                    <a class="btn button-dropdown">Brands</a>
                     <div class="dropdown-menu">
                         <div class="dropdown-items">
                             <div class="dropdown-menu-checkbox">
@@ -87,25 +87,26 @@
                 </div>
 
                 <div class="dropdown" id="dietary">
-                    <a href="#drop" class="btn button-dropdown">Dietary</a>
+                    <a class="btn button-dropdown">Dietary</a>
                     <div class="dropdown-menu">
                         <div class="dropdown-items">
-                            <div class="dropdown-menu-checkbox">
-                                <input type="checkbox" id="dietary_checkbox_1">
-                                <label for="dietary_checkbox_1" class="dropdown-menu-item">Chocolate</label>
-                            </div>
-                            <div class="dropdown-menu-checkbox">
-                                <input type="checkbox" id="dietary_checkbox_2">
-                                <label for="dietary_checkbox_2" class="dropdown-menu-item">Home Baking</label>
-                            </div>
-                            <div class="dropdown-menu-checkbox">
-                                <input type="checkbox" id="dietary_checkbox_3">
-                                <label for="dietary_checkbox_3" class="dropdown-menu-item">Milk, Butter & Eggs</label>
-                            </div>
-                            <div class="dropdown-menu-checkbox">
-                                <input type="checkbox" id="dietary_checkbox_4">
-                                <label for="dietary_checkbox_4" class="dropdown-menu-item">Ready Meals</label>
-                            </div>
+                            {% for filter in products.filters %}
+
+                                {% if products.page_info.active_filters %}
+                                    {% if filter.url in products.page_info.active_filters %}
+                                        {% set checked = 'checked' %}
+                                    {% else %}
+                                        {% set checked = '' %}
+                                    {% endif %}
+                                {% endif %}
+
+
+                                <div class="dropdown-menu-checkbox">
+                                    <input {{ checked }} data-url="{{ filter.url }}" class="dropdown-dietary-item" type="checkbox" id="dietary_checkbox_{{ filter.url }}">
+                                    <label for="dietary_checkbox_{{ filter.url }}" class="dropdown-menu-item">{{ filter.name }}</label>
+                                </div>
+                            {% endfor %}
+
                         </div>
                     </div>
                 </div>
@@ -121,7 +122,7 @@
                         {% set current_order_text = 'Relevance' %}
                     {% endif %}
 
-                    <a href="#drop" class="btn button-dropdown">{{ current_order_text }}</a>
+                    <a class="btn button-dropdown">{{ current_order_text }}</a>
                     <div class="dropdown-menu menu-right">
                         <div class="dropdown-items">
                             <div class="dropdown-menu-checkbox">
