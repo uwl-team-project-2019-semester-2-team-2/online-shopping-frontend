@@ -22,6 +22,6 @@ def sign_in():
 
 
 @app.route('/register')
-def sign_in():
+def register():
     return 'Sign in'
 

@@ -10,16 +10,16 @@ def index(term):
     page = request.args.get('page', default=1, type=int)
     order = request.args.get('order', default='relevance', type=str)
     filters = request.args.get('filter', default='', type=str)
+    page_basis = api_util.get_page_basic()
 
-    departments = api_util.get('/department')
     products = api_util.get('/search/' + term + '?filter=' + filters + '&page=' + str(page))
     pages = math.ceil(products['page_info']['product_count'] / 25)
 
     print(pages)
     return render_template(
         'search.j2',
-        title='Results for "' + term + '" - GO Mart',
-        departments=departments,
+        title='Results for "' + term,
+        page_basis=page_basis,
         products=products,
         term=term,
         page=page,

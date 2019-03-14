@@ -1,221 +1,204 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">    
-    <title>{{ title }}</title>
-
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/search.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/landing.css') }}">
-    <script type="text/javascript" src="{{ url_for('static', filename='scripts/dropdown.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='scripts/search.js') }}"></script>
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-</head>
-
-<body>
-
-    {% include 'header.j2' %}
+{% include 'header.j2' %}
 
 
-    <div class="page-container search-page">
-        <div class="search-text">
-            {% if products.products %}
-                {% set page_results_upper = page * 25 %}
-                {% set page_results_lower = page_results_upper - 25 + 1 %}
+<div class="page-container search-page">
+    <div class="search-text">
+        {% if products.products %}
+            {% set page_results_upper = page * 25 %}
+            {% set page_results_lower = page_results_upper - 25 + 1 %}
 
-                {% if page == pages %}
-                    {% set page_results_upper = products.count %}
-                {% endif %}
-
-                <h4 class="search-results-text">{{ page_results_lower }}-{{ page_results_upper }} of {{ products.count }} results for "{{ term }}"</h4>
-            {% else %}
-                <h4 class="search-results-text">No products found for "{{ term }}"</h4>
+            {% if page == pages %}
+                {% set page_results_upper = products.count %}
             {% endif %}
-        </div>
 
-        <div class="dropdown-container">
-            <div class="left">
-                <div class="dropdown" id="categories">
-                    <a class="btn button-dropdown">Categories</a>
+            <h4 class="search-results-text">{{ page_results_lower }}-{{ page_results_upper }} of {{ products.count }} results for "{{ term }}"</h4>
+        {% else %}
+            <h4 class="search-results-text">No products found for "{{ term }}"</h4>
+        {% endif %}
+    </div>
 
-                    <div class="dropdown-menu">
-                        <div class="dropdown-items">
-                            <div class="dropdown-menu-checkbox">
-                                <input type="checkbox" id="categories_checkbox_1">
-                                <label for="categories_checkbox_1" class="dropdown-menu-item">Chocolate</label>
-                            </div>
-                            <div class="dropdown-menu-checkbox">
-                                <input type="checkbox" id="categories_checkbox_2">
-                                <label for="categories_checkbox_2" class="dropdown-menu-item">Home Baking</label>
-                            </div>
-                            <div class="dropdown-menu-checkbox">
-                                <input type="checkbox" id="categories_checkbox_3">
-                                <label for="categories_checkbox_3" class="dropdown-menu-item">Milk, Butter & Eggs</label>
-                            </div>
-                            <div class="dropdown-menu-checkbox">
-                                <input type="checkbox" id="categories_checkbox_4">
-                                <label for="categories_checkbox_4" class="dropdown-menu-item">Ready Meals</label>
-                            </div>
+    <div class="dropdown-container">
+        <div class="left">
+            <div class="dropdown" id="categories">
+                <a class="btn button-dropdown">Categories</a>
+
+                <div class="dropdown-menu">
+                    <div class="dropdown-items">
+                        <div class="dropdown-menu-checkbox">
+                            <input type="checkbox" id="categories_checkbox_1">
+                            <label for="categories_checkbox_1" class="dropdown-menu-item">Chocolate</label>
+                        </div>
+                        <div class="dropdown-menu-checkbox">
+                            <input type="checkbox" id="categories_checkbox_2">
+                            <label for="categories_checkbox_2" class="dropdown-menu-item">Home Baking</label>
+                        </div>
+                        <div class="dropdown-menu-checkbox">
+                            <input type="checkbox" id="categories_checkbox_3">
+                            <label for="categories_checkbox_3" class="dropdown-menu-item">Milk, Butter & Eggs</label>
+                        </div>
+                        <div class="dropdown-menu-checkbox">
+                            <input type="checkbox" id="categories_checkbox_4">
+                            <label for="categories_checkbox_4" class="dropdown-menu-item">Ready Meals</label>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="dropdown" id="brands">
-                    <a class="btn button-dropdown">Brands</a>
-                    <div class="dropdown-menu">
-                        <div class="dropdown-items">
-                            <div class="dropdown-menu-checkbox">
-                                <input type="checkbox" id="brands_checkbox_1">
-                                <label for="brands_checkbox_1" class="dropdown-menu-item">Chocolate</label>
-                            </div>
-                            <div class="dropdown-menu-checkbox">
-                                <input type="checkbox" id="brands_checkbox_2">
-                                <label for="brands_checkbox_2" class="dropdown-menu-item">Home Baking</label>
-                            </div>
-                            <div class="dropdown-menu-checkbox">
-                                <input type="checkbox" id="brands_checkbox_3">
-                                <label for="brands_checkbox_3" class="dropdown-menu-item">Milk, Butter & Eggs</label>
-                            </div>
-                            <div class="dropdown-menu-checkbox">
-                                <input type="checkbox" id="brands_checkbox_4">
-                                <label for="brands_checkbox_4" class="dropdown-menu-item">Ready Meals</label>
-                            </div>
-
+            <div class="dropdown" id="brands">
+                <a class="btn button-dropdown">Brands</a>
+                <div class="dropdown-menu">
+                    <div class="dropdown-items">
+                        <div class="dropdown-menu-checkbox">
+                            <input type="checkbox" id="brands_checkbox_1">
+                            <label for="brands_checkbox_1" class="dropdown-menu-item">Chocolate</label>
                         </div>
+                        <div class="dropdown-menu-checkbox">
+                            <input type="checkbox" id="brands_checkbox_2">
+                            <label for="brands_checkbox_2" class="dropdown-menu-item">Home Baking</label>
+                        </div>
+                        <div class="dropdown-menu-checkbox">
+                            <input type="checkbox" id="brands_checkbox_3">
+                            <label for="brands_checkbox_3" class="dropdown-menu-item">Milk, Butter & Eggs</label>
+                        </div>
+                        <div class="dropdown-menu-checkbox">
+                            <input type="checkbox" id="brands_checkbox_4">
+                            <label for="brands_checkbox_4" class="dropdown-menu-item">Ready Meals</label>
+                        </div>
+
                     </div>
                 </div>
+            </div>
 
-                <div class="dropdown" id="dietary">
-                    <a class="btn button-dropdown">Dietary</a>
-                    <div class="dropdown-menu">
-                        <div class="dropdown-items">
-                            {% for filter in products.filters %}
+            <div class="dropdown" id="dietary">
+                <a class="btn button-dropdown">Dietary</a>
+                <div class="dropdown-menu">
+                    <div class="dropdown-items">
+                        {% for filter in products.filters %}
 
-                                {% if products.page_info.active_filters %}
-                                    {% if filter.url in products.page_info.active_filters %}
-                                        {% set checked = 'checked' %}
-                                    {% else %}
-                                        {% set checked = '' %}
-                                    {% endif %}
+                            {% if products.page_info.active_filters %}
+                                {% if filter.url in products.page_info.active_filters %}
+                                    {% set checked = 'checked' %}
+                                {% else %}
+                                    {% set checked = '' %}
                                 {% endif %}
+                            {% endif %}
 
 
-                                <div class="dropdown-menu-checkbox">
-                                    <input {{ checked }} data-url="{{ filter.url }}" class="dropdown-dietary-item" type="checkbox" id="dietary_checkbox_{{ filter.url }}">
-                                    <label for="dietary_checkbox_{{ filter.url }}" class="dropdown-menu-item">{{ filter.name }}</label>
-                                </div>
-                            {% endfor %}
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="right">
-                <div class="dropdown" id="relevance">
-
-                    {% if order == 'ascending' %}
-                        {% set current_order_text = 'Price low to high' %}
-                    {% elif order == 'descending' %}
-                        {% set current_order_text = 'Price high to low' %}
-                    {% else %}
-                        {% set current_order_text = 'Relevance' %}
-                    {% endif %}
-
-                    <a class="btn button-dropdown">{{ current_order_text }}</a>
-                    <div class="dropdown-menu menu-right">
-                        <div class="dropdown-items">
                             <div class="dropdown-menu-checkbox">
-                                <input type="checkbox" id="relevance_checkbox_1">
-                                <label for="relevance_checkbox_1" class="dropdown-menu-item">Relevance</label>
+                                <input {{ checked }} data-url="{{ filter.url }}" class="dropdown-dietary-item" type="checkbox" id="dietary_checkbox_{{ filter.url }}">
+                                <label for="dietary_checkbox_{{ filter.url }}" class="dropdown-menu-item">{{ filter.name }} ({{ filter.quantity }})</label>
                             </div>
-                            <div class="dropdown-menu-checkbox">
-                                <input type="checkbox" id="relevance_checkbox_2">
-                                <label for="relevance_checkbox_1" class="dropdown-menu-item">Price low to high</label>
-                            </div>
-                            <div class="dropdown-menu-checkbox">
-                                <input type="checkbox" id="relevance_checkbox_3">
-                                <label for="relevance_checkbox_2" class="dropdown-menu-item">Price high to low</label>
-                            </div>
-                        </div>
+                        {% endfor %}
+
                     </div>
                 </div>
             </div>
         </div>
+        <div class="right">
+            <div class="dropdown" id="relevance">
 
-        <div class="search-content">
-            {% if products.products %}
-                {% for product in products.products %}
+                {% if order == 'ascending' %}
+                    {% set current_order_text = 'Price low to high' %}
+                {% elif order == 'descending' %}
+                    {% set current_order_text = 'Price high to low' %}
+                {% else %}
+                    {% set current_order_text = 'Relevance' %}
+                {% endif %}
 
-                    <div class="search-item">
-                        <div class="inner">
-                            <div class="item-image">
-                                <a href="#item"><img src="pictures/landing/image3.png"></a>
-                            </div>
-                            <div class="title-container">
-                                <a href="#item"><p class="item-title">{{ product.name }}</p></a>
-                            </div>
-
-                            <div class="item-bottom">
-                                <p class="item-subtitle">{{ product.item_quantity }}{{ product.item_quantity_postfix }}</p>
-
-                                <div class="price-container">
-                                    <div class="price">
-                                        <h3>£{{ product.price }}</h3>
-                                    </div>
-                                    <div class="sub-price">
-                                        <p class="pricing-thing">21.7p each</p>
-                                    </div>
-                                </div>
-
-                                <div class="add-button-area">
-                                    <div class="left">
-                                        <input type="text" class="text-input quantity-input" value="1">
-                                        <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
-                                    </div>
-                                    <div class="right">
-                                        <div class="favourite-item-container">
-                                            <a href="#lol" class="btn button-favourite enabled"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <a class="btn button-dropdown">{{ current_order_text }}</a>
+                <div class="dropdown-menu menu-right">
+                    <div class="dropdown-items">
+                        <div class="dropdown-menu-checkbox">
+                            <input type="checkbox" id="relevance_checkbox_1">
+                            <label for="relevance_checkbox_1" class="dropdown-menu-item">Relevance</label>
+                        </div>
+                        <div class="dropdown-menu-checkbox">
+                            <input type="checkbox" id="relevance_checkbox_2">
+                            <label for="relevance_checkbox_2" class="dropdown-menu-item">Price low to high</label>
+                        </div>
+                        <div class="dropdown-menu-checkbox">
+                            <input type="checkbox" id="relevance_checkbox_3">
+                            <label for="relevance_checkbox_3" class="dropdown-menu-item">Price high to low</label>
                         </div>
                     </div>
-                {% endfor %}
-            {% endif %}
-        </div>
-
-        <div class="pagination">
-
-            <div class="left">
-                {% if page == 1 %}
-                    <a href="#back" class="btn button-disable button-pagination"><i class="fas fa-chevron-left"></i></a>
-                {% else %}
-                    <a href="{{ term }}?page={{ page - 1 }}" class="btn button-orange button-pagination"><i class="fas fa-chevron-left"></i></a>
-                {% endif %}
-
-                {% for x in range(1, pages + 1) %}
-                    {% if x == page %}
-                        <a class="btn button-outline-dark button-pagination selected">{{ x }}</a>
-                    {% else %}
-                        <a href="{{ term }}?page={{ x }}" class="btn button-outline-dark button-pagination">{{ x }}</a>
-                    {% endif %}
-                {% endfor %}
-
-                {% if page == pages %}
-                    <a href="#back" class="btn button-disable button-pagination"><i class="fas fa-chevron-right"></i></a>
-                {% else %}
-                    <a href="{{ term }}?page={{ page + 1 }}" class="btn button-orange button-pagination"><i class="fas fa-chevron-right"></i></a>
-                {% endif %}
-            </div>
-
-            <div class="right">
-                <a href="#back" class="btn button-orange"><i class="fas fa-chevron-up"></i></a>
+                </div>
             </div>
         </div>
     </div>
 
-    {% include 'footer.j2' %}
+    <div class="search-content">
+        {% if products.products %}
+            {% for product in products.products %}
+
+                <div class="search-item">
+                    <div class="inner">
+                        <div class="item-image">
+                            <a href="#item"><img src="pictures/landing/image3.png"></a>
+                        </div>
+                        <div class="title-container">
+                            <a href="#item"><p class="item-title">{{ product.name }}</p></a>
+                        </div>
+
+                        <div class="item-bottom">
+                            <p class="item-subtitle">{{ product.item_quantity }}{{ product.item_quantity_postfix }}</p>
+
+                            <div class="price-container">
+                                <div class="price">
+                                    <h3>£{{ product.price }}</h3>
+                                </div>
+                                <div class="sub-price">
+                                    <p class="pricing-thing">21.7p each</p>
+                                </div>
+                            </div>
+
+                            <div class="add-button-area">
+                                <div class="left">
+                                    <input type="text" class="text-input quantity-input" value="1">
+                                    <a href="#idk" class="btn button-orange add-button"><i class="fas fa-plus"></i></a>
+                                </div>
+                                <div class="right">
+                                    <div class="favourite-item-container">
+                                        <a href="#lol" class="btn button-favourite enabled"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <div class="pagination">
+
+        <div class="left">
+            {% if page == 1 %}
+                <a href="#back" class="btn button-disable button-pagination"><i class="fas fa-chevron-left"></i></a>
+            {% else %}
+                <a href="{{ term }}?page={{ page - 1 }}" class="btn button-orange button-pagination"><i class="fas fa-chevron-left"></i></a>
+            {% endif %}
+
+            {% for x in range(1, pages + 1) %}
+                {% if x == page %}
+                    <a class="btn button-outline-dark button-pagination selected">{{ x }}</a>
+                {% else %}
+                    <a href="{{ term }}?page={{ x }}" class="btn button-outline-dark button-pagination">{{ x }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if page == pages %}
+                <a href="#back" class="btn button-disable button-pagination"><i class="fas fa-chevron-right"></i></a>
+            {% else %}
+                <a href="{{ term }}?page={{ page + 1 }}" class="btn button-orange button-pagination"><i class="fas fa-chevron-right"></i></a>
+            {% endif %}
+        </div>
+
+        <div class="right">
+            <a href="#back" class="btn button-orange"><i class="fas fa-chevron-up"></i></a>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.j2' %}
 </body>
 </html>

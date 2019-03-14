@@ -41,7 +41,7 @@ Users can view and edit items in basket from here
 |------------------|------------------------------------------------------------------------------------------|
 | `/`              | Initial management page with links to child pages                                        |
 | `/order-history` | Past orders made by account                                                              |
-| `/account`       | Editing of account information, such as changing names, passwords or emails              |
+| `/account-info`  | Editing of account information, such as changing names, passwords or emails              |
 | `/addresses`     | Overview of addresses attached to account with ability to create, modify or delete       |
 | `/payment`       | Overview of payment details attached to account with ability to create, modify or delete |
 

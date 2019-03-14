@@ -12,3 +12,15 @@ def get(path):
     else:
         return None
 
+
+def get_page_basic():
+    page_basic = {}
+
+    departments = get('/department')
+
+    if departments is None:
+        return None
+
+    page_basic['departments'] = departments
+
+    return page_basic

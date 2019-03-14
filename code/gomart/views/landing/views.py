@@ -6,8 +6,12 @@ landing = Blueprint('landing', __name__)
 
 @landing.route('/')
 def index():
-    departments = api_util.get('/department')
-    if departments is None:
+    page_basic = api_util.get_page_basic()
+
+    if page_basic is None:
         return abort(500)
-    else:
-        return render_template('landing.j2', title='GO Mart - Home', departments=departments)
+
+    return render_template(
+        'landing.j2',
+        title='Home',
+        page_basis=page_basic)

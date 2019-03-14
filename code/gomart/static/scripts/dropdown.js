@@ -8,20 +8,20 @@ function initNavigationDropdown(dropdown, menuItem) {
     let isMouseOverDropDown = false;
     let timeoutId;
 
-    menuItem.addEventListener("click", () => {
+    menuItem.addEventListener('click', () => {
         isMouseOverMenu = true;
         searchBar.style.display = 'none';
 
-        toggleMenuLights(!dropdown.classList.contains("dropdown-content-show"));
-        dropdown.classList.toggle('dropdown-content-show', !dropdown.classList.contains("dropdown-content-show"));
+        toggleMenuLights(!dropdown.classList.contains('dropdown-content-show'));
+        dropdown.classList.toggle('dropdown-content-show', !dropdown.classList.contains('dropdown-content-show'));
 
         timeoutId = null;
     });
 
-    menuItem.addEventListener("mouseenter", () => {
+    menuItem.addEventListener('mouseenter', () => {
         isMouseOverMenu = true;
 
-        if (document.getElementsByClassName("dropdown-content-show").length > 0) {
+        if (document.getElementsByClassName('dropdown-content-show').length > 0) {
             dropdown.classList.add('dropdown-content-show');
             toggleMenuLights(true);
         } else {
@@ -33,7 +33,7 @@ function initNavigationDropdown(dropdown, menuItem) {
         }
     });
 
-    menuItem.addEventListener("mouseleave", () => {
+    menuItem.addEventListener('mouseleave', () => {
         isMouseOverMenu = false;
         clearTimeout(timeoutId);
 
@@ -45,9 +45,9 @@ function initNavigationDropdown(dropdown, menuItem) {
         }, 50);
     });
 
-    dropdown.addEventListener("mouseenter", () => isMouseOverDropDown = true);
+    dropdown.addEventListener('mouseenter', () => isMouseOverDropDown = true);
 
-    dropdown.addEventListener("mouseleave", () => {
+    dropdown.addEventListener('mouseleave', () => {
         isMouseOverDropDown = false;
         clearTimeout(timeoutId);
 
@@ -55,7 +55,7 @@ function initNavigationDropdown(dropdown, menuItem) {
             if (!isMouseOverMenu) {
                 dropdown.classList.remove('dropdown-content-show');
 
-                if (!document.getElementsByClassName("dropdown-content-show").length > 0) {
+                if (!document.getElementsByClassName('dropdown-content-show').length > 0) {
                     toggleMenuLights(false);
                 }
             }
@@ -73,14 +73,14 @@ function initSearchBar() {
     window.onresize = () => adjustSearchBar(dropdown, searchBar.getBoundingClientRect());
 
     searchButton.addEventListener('click', () => {
-        if (searchBar.value !== "") {
-            location.href = "/search/" + searchBar.value
+        if (searchBar.value !== '') {
+            location.href = '/search/' + searchBar.value
         }
     });
 
     searchBar.addEventListener('input', () => {
         if (dropdown.style.display === 'none') {
-            Array.prototype.forEach.call(document.getElementsByClassName("dropdown-content-show"), (item) => {
+            Array.prototype.forEach.call(document.getElementsByClassName('dropdown-content-show'), (item) => {
                 item.classList.remove('dropdown-content-show');
             });
         }
@@ -155,7 +155,7 @@ function adjustSearchBar(dropdown, rect) {
 }
 
 function initPageDropdowns() {
-    Array.prototype.forEach.call(document.getElementsByClassName("dropdown"), (item) => {
+    Array.prototype.forEach.call(document.getElementsByClassName('dropdown'), (item) => {
         let dropdownButton = item.getElementsByClassName('button-dropdown')[0];
         let dropdownMenu = item.getElementsByClassName('dropdown-menu')[0];
 
@@ -188,9 +188,9 @@ function appendUrlParam(key, value) {
     if (!searchParams.has(key)) {
         searchParams.set(key, value);
     } else {
-        let params = searchParams.get(key).split(",");
+        let params = searchParams.get(key).split(',');
         params.push(value)
-        searchParams.set(key, params.join(","));
+        searchParams.set(key, params.join(','));
     }
 
     console.log(url);
@@ -198,23 +198,49 @@ function appendUrlParam(key, value) {
     return url
 }
 
+function removeURLParam(key, value) {
+    key = encodeURI(key);
+    value = encodeURI(value);
+
+    let url = new URL(window.location.href);
+    let searchParams = url.searchParams;
+
+    if (searchParams.has(key)) {
+        let params = searchParams.get(key);
+        let paramsSplit = params.split(',');
+
+        let index = paramsSplit.indexOf(value);
+
+        if (index !== -1) {
+            paramsSplit.splice(index, 1);
+        }
+        if (searchParams.length > 1) {
+            searchParams.set(key, paramsSplit.join(','));
+        } else {
+            searchParams.set(key, paramsSplit.join(''))
+        }
+    }
+
+    return url;
+}
+
 window.onload = () => {
-    initNavigationDropdown(document.getElementById('department-dropdown'), document.getElementById("menu-department"));
-    initNavigationDropdown(document.getElementById('favourites-dropdown'), document.getElementById("menu-favourites"));
+    initNavigationDropdown(document.getElementById('department-dropdown'), document.getElementById('menu-department'));
+    initNavigationDropdown(document.getElementById('favourites-dropdown'), document.getElementById('menu-favourites'));
     initSearchBar();
     initPageDropdowns();
 
 
-    Array.prototype.forEach.call(document.getElementsByClassName("dropdown-dietary-item"), (item) => {
+    Array.prototype.forEach.call(document.getElementsByClassName('dropdown-dietary-item'), (item) => {
 
         item.addEventListener('change', (event) => {
             let dietaryUrl = item.dataset.url;
             let url;
             if (event.target.checked) {
-                url = appendUrlParam("filter", dietaryUrl);
+                url = appendUrlParam('filter', dietaryUrl);
                 console.log(url.href);
             } else {
-
+                url = removeURLParam('filter', dietaryUrl);
             }
             location.href = url.href;
         });
