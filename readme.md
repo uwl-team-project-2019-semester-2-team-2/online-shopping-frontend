@@ -81,3 +81,25 @@ Users can sign in to their accounts
 ### Register `/register`
 
 Users can register accounts
+
+## Flask
+
+Basic use of Flask routing
+
+```python3
+    @blueprint.route('/')
+    def function():
+    page_basis = api_util.get_page_basic()
+    
+    return render_template(
+        'template.j2',
+        title='Results for "' + term,
+        page_basis=page_basis
+    )
+```
+
+| Variable      | Description                                                                      |
+|---------------|----------------------------------------------------------------------------------|
+| `page_basis`  | Contains the list of departments for the dropdown etc, possibly other things too |
+| `blueprint`   | Blueprint is package specific, could be `admin` `basket` `app` `search` etc      |
+| `template.j2` | The template to be returned with this information                                |

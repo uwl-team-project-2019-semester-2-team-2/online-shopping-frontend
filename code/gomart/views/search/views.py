@@ -15,7 +15,6 @@ def index(term):
     products = api_util.get('/search/' + term + '?filter=' + filters + '&page=' + str(page))
     pages = math.ceil(products['page_info']['product_count'] / 25)
 
-    print(pages)
     return render_template(
         'search.j2',
         title='Results for "' + term,

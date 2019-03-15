@@ -412,6 +412,10 @@ a.dropdown-item i {
     display: inline-block;
 }
 
+.items .menu-bar-item:hover {
+    cursor: pointer;
+}
+
 .menu-bar-item.menu-item-dropdown::after {
     padding-left: 10px;
     margin-left: 10px;
@@ -1182,8 +1186,8 @@ a.extra-shit-item:hover p {
     background-color: white;
     margin: 30px 0;
     border-radius: 5px;
-    border: 1px solid #B9B9B9;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+    /*border: 1px solid #B9B9B9;*/
+    /*box-shadow: 0 3px 6px rgba(0, 0, 0, .16);*/
 }
 
 .box-white p {
